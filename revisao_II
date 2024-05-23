@@ -1,0 +1,63 @@
+#REVISAO ATV II
+.data
+	
+	msg0:.asciiz "Digite o anao de nascimento da primeira pessoa:\n"
+	msg1:.asciiz "A primeira pessoa nasceu no ano de:\t"
+	msg2:.asciiz "Digite o ano de nascimento da segunda pessoa\n"
+	msg3:.asciiz "A segunda pessoa nasceu no ano de:\t"
+	br:.asciiz "\n"
+	
+	
+.text
+
+	#IMPRIME A PRIMERIA MENSAGEM
+	li $v0, 4
+	la $a0,msg0
+	syscall
+	
+	#RECEBE DADOS
+	li $v0,5
+	syscall	
+	move $t0, $v0
+
+	#CARREGA A SEGUNDA MENSAGEM
+	li $v0,4
+	la $a0,msg1
+	syscall 
+	
+	#IMPRIME 0 VALOR
+	li $v0,1
+	move $a0,$t0
+	syscall
+	
+	#BREAK LINE 
+	li $v0,4
+	la $a0,br
+	syscall 
+	
+	#--------------
+	#IMPRIME A PRIMERIA MENSAGEM
+	li $v0, 4
+	la $a0,msg2
+	syscall
+	
+	#RECEBE DADOS
+	li $v0,5
+	syscall
+	move $t0, $v0
+	
+	#CARREGA A SEGUNDA MENSAGEM
+	li $v0,4
+	la $a0,msg3
+	syscall 
+	
+	#IMPRIME A O VALOR 
+	li $v0,1
+	move $a0,$t0
+	syscall
+	
+	#BREAK LINE 
+	li $v0,4
+	la $a0,br
+	syscall 
+	
